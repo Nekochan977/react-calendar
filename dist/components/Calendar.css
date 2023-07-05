@@ -44,11 +44,13 @@
 .clickable-cell:active{
     background-color: rgb(167 139 250);
 }
+
 .cell:empty{
     width:34px;
     height: 16px;
     padding: 2px;
 }
+
 .calendar-input {
     border: 1px solid rgba(37, 3, 244, 0.25);
     box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
@@ -60,4 +62,12 @@
 .calendar-block{
     display: flex;
     flex-direction: column;
+}
+.calendar{
+    color: #2503F4;
+}
+.margin{
+   display: flex;
+    justify-content: center;
+    margin-top: 5rem;
 }
