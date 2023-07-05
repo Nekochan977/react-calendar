@@ -3,7 +3,13 @@
     margin-top: 1.5rem;
     border: 1px solid;
     border-radius: 5px;
-    padding: 4px;
+}
+.cell-container{
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .top-cell {
     display: flex;
@@ -16,16 +22,33 @@
 }
 .top-cell:nth-child(5){
     border-top-right-radius: 5px ;
+    border-right: unset;
+}
+.full-date-cell{
+    grid-column: span 3 / span 3;
 }
 .day-cell {
     font-weight: 600;
     border-right: 1px solid;
     border-bottom: 1px solid;
 }
+.day-cell:nth-child(12){
+    border-right: unset;
+}
+.clickable-cell{
+    cursor: pointer;
+}
+.clickable-cell:hover{
+    background-color: rgb(241 245 249);
+}
+.clickable-cell:active{
+    background-color: rgb(167 139 250);
+}
 
 .cell:empty{
     width:34px;
     height: 16px;
+    padding: 2px;
 }
 
 .calendar-input {
@@ -34,9 +57,17 @@
     border-radius: 20px;
     padding: 0.4rem;
     color: #2503F4;
-    width: 23rem;
+    /*width: 23rem;*/
 }
 .calendar-block{
     display: flex;
     flex-direction: column;
+}
+.calendar{
+    color: #2503F4;
+}
+.margin{
+   display: flex;
+    justify-content: center;
+    margin-top: 5rem;
 }

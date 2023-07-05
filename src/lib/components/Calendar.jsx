@@ -42,12 +42,12 @@ const Calendar = ({className, text, handleMyClick, ID}) => {
             {openCalendar === true ?
                 <div className={className}>
                     <div className={"calendar-container"}>
-                        <div className={"grid grid-cols-7 items-center justify-center text-center"}>
-                            <Cell className={"cell top-cell"} onClick={prevYear}>{"<<"}</Cell>
-                            <Cell className={"cell top-cell"} onClick={prevMonth}>{"<"}</Cell>
-                            <Cell className={"cell top-cell col-span-3"}>{format(currentDate, "LLLL yyyy")}</Cell>
-                            <Cell className={"cell top-cell"} onClick={nextMonth}>{">"}</Cell>
-                            <Cell className={"cell top-cell"} onClick={nextYear}>{">>"}</Cell>
+                        <div className={"cell-container"}>
+                            <Cell className={"cell top-cell clickable-cell"} onClick={prevYear}>{"<<"}</Cell>
+                            <Cell className={"cell top-cell clickable-cell"} onClick={prevMonth}>{"<"}</Cell>
+                            <Cell className={"cell top-cell full-date-cell"}>{format(currentDate, "LLLL yyyy")}</Cell>
+                            <Cell className={"cell top-cell clickable-cell"} onClick={nextMonth}>{">"}</Cell>
+                            <Cell className={"cell top-cell clickable-cell"} onClick={nextYear}>{">>"}</Cell>
 
                             {weekDays.map((day) => (
                                 <Cell key={day} className={"cell day-cell"}>{day}</Cell>
@@ -59,7 +59,7 @@ const Calendar = ({className, text, handleMyClick, ID}) => {
 
                             {Array.from({length : numDays}).map((_, index) =>{
                                 const date = index +1
-                                return(<Cell key={date} className={"cell hover:bg-gray-100 active:bg-violet-400 "} onClick={()=> handleClickDate(date, index+1)}>{date}</Cell>)
+                                return(<Cell key={date} className={"cell clickable-cell"} onClick={()=> handleClickDate(date, index+1)}>{date}</Cell>)
                             })}
 
                             {Array.from({length: suffixDays}).map((_, index)  => {
